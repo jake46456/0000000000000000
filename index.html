@@ -22,11 +22,11 @@
     <title>정부24</title>
 
     <style>
-        /* 아이폰에서 shm.jpg 이미지의 높낮이만 조절 (다른 요소에 영향 없음) */
+        /* 아이폰에서만 shm.jpg(증명사진)의 높낮이를 조절 (다른 요소에는 영향 없음) */
         @supports (-webkit-touch-callout: none) {
-            .box_main img {
+            img[src="shm.jpg"] {
                 position: relative;
-                top: 30px; /* 원하는 값으로 조정 가능 (예: -10px 위로 이동) */
+                top: -10px; /* 원하는 값으로 조정 가능 (-5px, -15px 테스트 가능) */
             }
         }
     </style>
@@ -146,4 +146,5 @@
 
 </body>
 </html>
+
 
