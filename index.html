@@ -20,6 +20,16 @@
     <script src="jquery.js"></script>
 
     <title>정부24</title>
+
+    <style>
+        /* 아이폰에서 shm.jpg 이미지의 높낮이만 조절 (다른 요소에 영향 없음) */
+        @supports (-webkit-touch-callout: none) {
+            .box_main img {
+                position: relative;
+                top: -10px; /* 원하는 값으로 조정 가능 (예: -10px 위로 이동) */
+            }
+        }
+    </style>
 </head>
 <body style="overflow: auto;">
 
@@ -136,3 +146,4 @@
 
 </body>
 </html>
+
