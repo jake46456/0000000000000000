@@ -20,34 +20,6 @@
     <script src="jquery.js"></script>
 
     <title>정부24</title>
-
-    <style>
-        /* 아이폰에서 shm.jpg만 위로 이동 */
-        @supports (-webkit-touch-callout: none) {
-            .box_main img {
-                position: relative;
-                top: -10px; /* 아이폰에서만 10px 위로 이동 */
-            }
-
-            /* 이름(h1)과 생년월일(h2)이 따라 올라가지 않도록 원래 위치 유지 */
-            .box_main h1, 
-            .box_main h2 {
-                position: relative;
-                top: 10px; /* 보정값 */
-            }
-
-            /* QR 코드 높낮이 조정 (아이폰에서만) */
-            .QR_Code {
-                position: relative;
-            }
-
-            .QR_Code img {
-                position: absolute;
-                top: 0px; /* 아이폰에서만 QR 코드 위로 15px 이동 */
-                ;
-            }
-        }
-    </style>
 </head>
 <body style="overflow: auto;">
 
@@ -72,7 +44,7 @@
             <br><br>
 
             <h1>최시훈</h1>
-            <h2 style="margin-left: 27px;">07.04.03</h2>
+            <h2 style="margin-left: 27px;">05.04.03</h2>
             <h3>용인시 처인구</h3>
             <div class="QR_Code">
                 <img id="QR_img" src="qr_code_1.png">
@@ -84,12 +56,41 @@
 
             <p class="QR_text">QR코드를 리더기에 스캔하세요</p>
 
-            <!-- 실시간 날짜 및 시간 표시 -->
+            <!-- 실시간 날짜 및 시간 표시 (QR코드를 리더기에 스캔하세요 밑에 배치) -->
             <p id="current_time" style="font-size: 12px; color: gray; text-align: center;"></p>
 
             <div class="box_footer">
                 <p class="js-click-modal">상세정보 표시</p>
             </div>
+        </div>
+
+        <div class="modal" style="display: none;">
+            <div id="box">
+                <img src="shm.jpg">
+                <h1>최시훈</h1>
+                <h2>050403-3249212</h2>
+                <h3>용인시 처인구 포곡읍 부곡로 41-23 111동 301호</h3>
+                <h4 style="margin-left: 42%">2023.01.24</h4>
+                <h5 style="margin-left: 35%;">용인시 처인구청장</h5>
+            </div>
+
+            <div class="back" style="align-items:center; display: flex; justify-content:center;">
+                <bd>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"></path>
+                    </svg>
+                </bd>
+            </div>
+        </div>
+
+        <div id="footer">
+            <marquee>
+                <p>캡쳐방지 시스템이 작동 중입니다. 캡쳐방지 시스템이 작동 중입니다. 
+                캡쳐방지 시스템이 작동 중입니다. 캡쳐방지 시스템이 작동 중입니다. 
+                캡쳐방지 시스템이 작동 중입니다. 캡쳐방지 시스템이 작동 중입니다. 
+                캡쳐방지 시스템이 작동 중입니다. 캡쳐방지 시스템이 작동 중입니다. 
+                캡쳐방지 시스템이 작동 중입니다. 캡쳐방지 시스템이 작동 중입니다.</p>
+            </marquee>
         </div>
     </div>
 
@@ -111,7 +112,7 @@
             const qrImages = ["qr_code_1.png", "qr_code_2.png"];
 
             setInterval(() => {
-                document.querySelector('.progressbar_time').innerHTML = ${count}초;
+                document.querySelector('.progressbar_time').innerHTML = `${count}초`;
                 document.querySelector('#jb').value = count;
 
                 if(count <= 0) {
