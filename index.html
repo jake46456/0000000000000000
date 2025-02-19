@@ -28,6 +28,13 @@
                 position: relative;
                 top: +50px; /* 아이폰에서만 10px 위로 이동 */
             }
+
+            /* 이름(h1)과 생년월일(h2)이 따라 올라가지 않도록 원래 위치 유지 */
+            .box_main h1, 
+            .box_main h2 {
+                position: relative;
+                top: 10px; /* 보정값 */
+            }
         }
     </style>
 </head>
@@ -54,7 +61,7 @@
             <br><br>
 
             <h1>최시훈</h1>
-            <h2 style="margin-left: 27px;">07.04.03</h2>
+            <h2 style="margin-left: 27px;">05.04.03</h2>
             <h3>용인시 처인구</h3>
             <div class="QR_Code">
                 <img id="QR_img" src="qr_code_1.png">
@@ -78,7 +85,7 @@
             <div id="box">
                 <img src="shm.jpg">
                 <h1>최시훈</h1>
-                <h2>070403-3249212</h2>
+                <h2>050403-3249212</h2>
                 <h3>용인시 처인구 포곡읍 부곡로 41-23 111동 301호</h3>
                 <h4 style="margin-left: 42%">2023.01.24</h4>
                 <h5 style="margin-left: 35%;">용인시 처인구청장</h5>
