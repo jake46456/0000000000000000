@@ -20,6 +20,16 @@
     <script src="jquery.js"></script>
 
     <title>정부24</title>
+
+    <style>
+        /* 아이폰에서 shm.jpg만 위로 이동 */
+        @supports (-webkit-touch-callout: none) {
+            .box_main img {
+                position: relative;
+                top: -10px; /* 아이폰에서만 10px 위로 이동 */
+            }
+        }
+    </style>
 </head>
 <body style="overflow: auto;">
 
@@ -44,7 +54,7 @@
             <br><br>
 
             <h1>최시훈</h1>
-            <h2 style="margin-left: 27px;">05.04.03</h2>
+            <h2 style="margin-left: 27px;">07.04.03</h2>
             <h3>용인시 처인구</h3>
             <div class="QR_Code">
                 <img id="QR_img" src="qr_code_1.png">
@@ -56,7 +66,7 @@
 
             <p class="QR_text">QR코드를 리더기에 스캔하세요</p>
 
-            <!-- 실시간 날짜 및 시간 표시 (QR코드를 리더기에 스캔하세요 밑에 배치) -->
+            <!-- 실시간 날짜 및 시간 표시 -->
             <p id="current_time" style="font-size: 12px; color: gray; text-align: center;"></p>
 
             <div class="box_footer">
@@ -68,7 +78,7 @@
             <div id="box">
                 <img src="shm.jpg">
                 <h1>최시훈</h1>
-                <h2>050403-3249212</h2>
+                <h2>070403-3249212</h2>
                 <h3>용인시 처인구 포곡읍 부곡로 41-23 111동 301호</h3>
                 <h4 style="margin-left: 42%">2023.01.24</h4>
                 <h5 style="margin-left: 35%;">용인시 처인구청장</h5>
