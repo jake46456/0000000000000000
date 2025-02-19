@@ -24,16 +24,16 @@
     <style>
         /* 아이폰에서 shm.jpg만 위로 이동 */
         @supports (-webkit-touch-callout: none) {
-            .profile-image-container {
+            .box_main img {
                 position: relative;
-                height: auto;
-                display: flex;
-                justify-content: center;
+                top: -10px; /* 아이폰에서만 10px 위로 이동 */
             }
 
-            .profile-image-container img {
-                position: absolute;
-                top: -10px; /* 아이폰에서만 위로 10px 이동 */
+            /* 이름(h1)과 생년월일(h2)이 따라 올라가지 않도록 원래 위치 유지 */
+            .box_main h1, 
+            .box_main h2 {
+                position: relative;
+                top: 10px; /* 보정값 */
             }
 
             /* QR 코드 높낮이 조정 (아이폰에서만) */
@@ -43,9 +43,8 @@
 
             .QR_Code img {
                 position: absolute;
-                top: -15px; /* 아이폰에서만 QR 코드 위로 15px 이동 */
-                left: 50%;
-                transform: translateX(-50%);
+                top: 0px; /* 아이폰에서만 QR 코드 위로 15px 이동 */
+                ;
             }
         }
     </style>
@@ -69,15 +68,12 @@
     <hr color="#ddeaf3">
     <div id="wrap">
         <div id="box" class="box_main">
-            <!-- 프로필 이미지 컨테이너 (독립적인 위치 유지) -->
-            <div class="profile-image-container">
-                <img src="shm.jpg">
-            </div>
+            <img src="shm.jpg">
+            <br><br>
 
             <h1>최시훈</h1>
             <h2 style="margin-left: 27px;">07.04.03</h2>
             <h3>용인시 처인구</h3>
-
             <div class="QR_Code">
                 <img id="QR_img" src="qr_code_1.png">
             </div>
@@ -115,7 +111,7 @@
             const qrImages = ["qr_code_1.png", "qr_code_2.png"];
 
             setInterval(() => {
-                document.querySelector('.progressbar_time').innerHTML = `${count}초`;
+                document.querySelector('.progressbar_time').innerHTML = ${count}초;
                 document.querySelector('#jb').value = count;
 
                 if(count <= 0) {
