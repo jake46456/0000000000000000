@@ -22,18 +22,18 @@
     <title>정부24</title>
 
     <style>
-        /* 아이폰에서만 shm.jpg와 이름, 생년월일, 주소 한꺼번에 조절 */
+        /* 아이폰에서 shm.jpg만 위로 이동 */
         @supports (-webkit-touch-callout: none) {
-            /* shm.jpg만 위로 이동 */
             .box_main img {
                 position: relative;
-                top: +50px; /* 원하는 만큼 조정 가능 */
+                top: -10px; /* 아이폰에서만 10px 위로 이동 */
             }
 
-            /* 이름(h1), 생년월일(h2), 주소(h3)를 한꺼번에 조정 */
-            .box_main .text-group {
+            /* 이름(h1)과 생년월일(h2)이 따라 올라가지 않도록 원래 위치 유지 */
+            .box_main h1, 
+            .box_main h2 {
                 position: relative;
-                top: -30px; /* 원하는 만큼 조정 가능 */
+                top: 10px; /* 보정값 */
             }
         }
     </style>
@@ -60,13 +60,9 @@
             <img src="shm.jpg">
             <br><br>
 
-            <!-- 이름, 생년월일, 주소를 감싸는 div 추가 -->
-            <div class="text-group">
-                <h1>최시훈</h1>
-                <h2 style="margin-left: 27px;">07.04.03</h2>
-                <h3>용인시 처인구</h3>
-            </div>
-
+            <h1>최시훈</h1>
+            <h2 style="margin-left: 27px;">07.04.03</h2>
+            <h3>용인시 처인구</h3>
             <div class="QR_Code">
                 <img id="QR_img" src="qr_code_1.png">
             </div>
